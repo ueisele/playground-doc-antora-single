@@ -2,7 +2,7 @@ site:
   title: Antora Examples Site
   # the 404 page and sitemap files only get generated when the url property is set
   url: https://ueisele-playground.gitlab.io/doc-antora-single
-  #start_page: antora-examples::index.adoc
+  start_page: antora-examples::index.adoc
 content:
   sources:
   - url: ./
