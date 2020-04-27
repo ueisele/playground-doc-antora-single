@@ -1,0 +1,120 @@
+:toc:
+:toc-title:
+:sectnums:
+:toclevels: 3
+
+= Diagrams Inline
+
+== Overview
+
+It's possible to generate diagrams and flowcharts from text in Antora using link:https://plantuml.com/[PlantUML].
+
+== PlantUML
+
+If you're new to using PlantUM or need help identifying issues in your PlantUML code, the link:http://plantuml.com/plantuml/[PlantUML Live Editor] is a helpful tool for creating and resolving issues within PlantUML diagrams.
+
+=== GitLab
+
+How to use PlantUML with GitLab is described at the GitLab PlantUML Integration Documentation in the section link:https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/administration/integration/plantuml.md#creating-diagrams[Creating Diagrams].
+
+==== Inline
+
+In order to generate a diagram or flowchart, you should write your text inside the `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg", id="myDiagram"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+....
+
+The above blocks will be converted to an HTML image tag with source pointing to the PlantUML instance. If the PlantUML server is correctly configured, this should
+render a nice diagram instead of the block:
+
+[plantuml]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+
+AsciiDoc also supports `svg` as output format:
+
+[plantuml, format="svg"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+
+Inside the block you can add any of the supported diagrams by PlantUML such as link:https://plantuml.com/sequence-diagram[Sequence], link:https://plantuml.com/use-case-diagram[Use Case], link:https://plantuml.com/class-diagram[Class], link:https://plantuml.com/activity-diagram-legacy[Activity], link:https://plantuml.com/component-diagram[Component], link:https://plantuml.com/state-diagram[State], and link:https://plantuml.com/object-diagram[Object] diagrams. You do not need to use the PlantUML diagram delimiters `@startuml`/`@enduml` as these are replaced by the AsciiDoc `plantuml` block.
+
+Some parameters can be added to the AsciiDoc block definition:
+
+* _format_: Can be either `png` or `svg`. Note that `svg` is not supported by all browsers so use with care. The default is `png`.
+* _id_: A CSS id added to the diagram HTML tag.
+* _width_: Width attribute added to the image tag.
+* _height_: Height attribute added to the image tag.
+
+==== Includes
+
+It is also possible include PlantUML diagrams form PlantUML files.
+
+A PlantUML diagram can be included by adding a include directive within a `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg"]
+----
+\include::example$plantuml-single-diagram.plantuml[]
+----
+....
+
+The above blocks will be converted to an HTML image tag with source pointing to the PlantUML instance.
+
+[plantuml, format="svg"]
+----
+include::example$plantuml-single-diagram.plantuml[]
+----
+
+A PlantUML diagram from a file which contains multipe diagrams can be included by the use of tags in order to specify regions.
+
+In a PlantUML file, a region can be defined by a beginning tag `'tag::name[]` and an end tag `'end::name[]`.
+
+The PlantUML file link:plantuml-diagrams.plantuml[] has the defined tags `first_diagram` and `second_diagram`.
+
+.See link:plantuml-multiple-diagrams.plantuml[]
+[%collapsible]
+====
+[,plantuml]
+----
+include::example$plantuml-multiple-diagrams.plantuml[]
+----
+====
+
+PlantUML diagrams from a multi diagram file can be included by adding a include directive with a tag within a `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg"]
+----
+\include::example$plantuml-multiple-diagrams.plantuml[tag=first_diagram]
+----
+
+[plantuml, format="svg"]
+----
+\include::example$plantuml-multiple-diagrams.plantuml[tag=second_diagram]
+----
+....
+
+The above blocks will be converted to HTML image tags with sources pointing to the PlantUML instances.
+
+[plantuml, format="svg"]
+----
+include::example$plantuml-multiple-diagrams.plantuml[tag=first_diagram]
+----
+
+[plantuml, format="svg"]
+----
+include::example$plantuml-multiple-diagrams.plantuml[tag=second_diagram]
+----

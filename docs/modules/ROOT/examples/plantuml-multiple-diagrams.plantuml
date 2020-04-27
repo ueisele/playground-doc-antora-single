@@ -1,0 +1,23 @@
+@startuml
+'tag::first_diagram[]
+actor Bob #red
+' The only difference between actor
+'and participant is the drawing
+participant Alice
+participant "I have a really\nlong name" as L #99FF99
+/' You can also declare:
+participant L as "I have a really\nlong name"  #99FF99
+'/
+
+Alice->Bob: Authentication Request
+Bob->Alice: Authentication Response
+Bob->L: Log transaction
+'end::first_diagram[]
+@enduml
+
+@startuml
+'tag::second_diagram[]
+DataAccess - [First Component]
+[First Component] ..> HTTP : us
+'end::second_diagram[]
+@enduml

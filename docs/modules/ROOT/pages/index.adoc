@@ -1,0 +1,9 @@
+= Antora Single Repository Examples
+
+This repository contains an Antora playbook as well as content. Goal is to demonstrate different render capabilities of Antora.
+
+A good demonstration of a multi repository documentation can be found an the https://gitlab.com/antora/demo[Antora Demo] on GitLab.
+
+== Diagrams
+
+* xref:diagrams-inline.adoc[Inline Diagrams]
