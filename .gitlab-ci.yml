@@ -1,15 +1,17 @@
 image:
-  name: antora/antora:2.3.0
+  name: node:12.16-slim
 pages:
   stage: deploy
   only:
   - master
   cache:
     paths:
-    - .cache/
+    - .cache
+    - node_modules
+  before_script:
+  - npm install
   script:
-  - npm install asciidoctor-plantuml
-  - antora --fetch --cache-dir=.cache/antora --to-dir=public antora-playbook.yml
+  - npm generate
   artifacts:
     paths:
-    - public/
+    - public

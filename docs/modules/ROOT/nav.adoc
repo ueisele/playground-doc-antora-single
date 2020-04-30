@@ -1,2 +1,3 @@
 * xref:index.adoc[Overview]
-* xref:diagrams-inline.adoc[Diagrams Inline]
+* xref:diagrams.adoc[Diagrams]
+** xref:diagrams/plantuml.adoc[PlantUML]

@@ -1,0 +1,7 @@
+= Diagrams
+
+== Overview
+
+It's possible to generate diagrams and flowcharts from text in Antora using:
+
+* xref:diagrams/plantuml.adoc[PlantUML]

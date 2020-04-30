@@ -1,0 +1,194 @@
+:toc:
+:toc-title:
+:sectnums:
+:toclevels: 3
+
+:antora_version: 2.3
+
+= PlantUML
+
+It's possible to generate diagrams and flowcharts from text in Antora using link:https://plantuml.com/[PlantUML].
+
+If you're new to using PlantUML or need help identifying issues in your PlantUML code, the link:http://plantuml.com/plantuml/[PlantUML Live Editor] is a helpful tool for creating and resolving issues within PlantUML diagrams.
+
+== Integration
+
+=== Antora
+
+Antora does not support PlantUML by default. However PlantUML support can be added with the Asciidoctor extension `asciidoctor-plantuml`.
+
+==== Installation
+
+The extension can be installed via `npm`:
+
+[source,bash]
+----
+npm install asciidoctor-plantuml
+----
+
+Alternatively, it can also be specified in the `package.json` file of the Antora project.
+
+.package.json
+[source,json]
+----
+  "devDependencies": {
+    "asciidoctor-plantuml": "^1.5.0"
+  },
+----
+
+==== Configuration
+
+The extensions can be activated by adding it to the `extension` section of the Antora playbook.
+
+.antora-playbook.yml
+[source,yaml]
+----
+asciidoc:
+  attributes:
+    sectanchors: true
+    plantuml-server-url: http://www.plantuml.com/plantuml
+    plantuml-fetch-diagram: true
+    imagesoutdir: temp_image/
+  extensions:
+  - asciidoctor-plantuml  
+----
+
+It is also possible to configure a custom PlantUML server.
+
+=== VSCode
+
+All you need to do is to get the link:https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode[AsciiDoc extension] and set the PlantUML server Url.
+
+The option we will use for this feature is `asciidoc.preview.attributes` that allows you to set arbitrary AsciiDoc attributes. These attributes will be injected into the preview.
+This extension needs the `:plantuml-server-url:` attribute to be set in the AsciiDoc document to become active and parse PlantUML blocks.
+
+So all you need to do in VS Code is to hop into your user settings and add the following entry:
+
+[source,json]
+----
+"asciidoc.preview.attributes": {
+    "plantuml-server-url": "http://plantuml.com/plantuml"
+}
+----
+
+The downside of using the public server is that it does not offer SSL encrypted endpoints and you must weaken your VS Code security settings to preview correctly.
+To do this open your command palette (⌘+P, ctrl+shift+P) and enter `asciidoc preview security` and choose `Allow insecure content`.
+
+You can use a local PlantUML server, see https://github.com/plantuml/plantuml-server
+
+The documentation about the VS Code integration is a rough summary of an existing blog post: https://dev.to/anoff/preview-asciidoc-with-embedded-plantuml-in-vs-code-3e5j
+
+== Syntax
+
+PlantUML diagrams can be defined <<Inline>> as well as <<Includes>>.
+
+=== Inline
+
+In order to generate a diagram or flowchart, you should write your text inside the `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg", id="myDiagram"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+....
+
+The above blocks will be converted to an HTML image tag with source pointing to the PlantUML instance. If the PlantUML server is correctly configured, this should
+render a nice diagram instead of the block:
+
+[plantuml]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+
+AsciiDoc also supports `svg` as output format:
+
+[plantuml, format="svg"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+
+Inside the block you can add any of the supported diagrams by PlantUML such as link:https://plantuml.com/sequence-diagram[Sequence], link:https://plantuml.com/use-case-diagram[Use Case], link:https://plantuml.com/class-diagram[Class], link:https://plantuml.com/activity-diagram-legacy[Activity], link:https://plantuml.com/component-diagram[Component], link:https://plantuml.com/state-diagram[State], and link:https://plantuml.com/object-diagram[Object] diagrams. You do not need to use the PlantUML diagram delimiters `@startuml`/`@enduml` as these are replaced by the AsciiDoc `plantuml` block.
+
+Some parameters can be added to the AsciiDoc block definition:
+
+* _format_: Can be either `png` or `svg`. Note that `svg` is not supported by all browsers so use with care. The default is `png`.
+* _id_: A CSS id added to the diagram HTML tag.
+* _width_: Width attribute added to the image tag.
+* _height_: Height attribute added to the image tag.
+
+=== Includes
+
+It is also possible include PlantUML diagrams from PlantUML files. Non-AsciiDoc files that contain reusable content are called examples in Antora and saved in the link:https://docs.antora.org/antora/{antora_version}/examples-directory/[examples-directory]
+
+----
+📂 docs
+  📂 modules
+    📂 ROOT
+      📂 examples
+        📂 diagrams
+          📄 plantuml-single-diagram.plantuml
+          📄 plantuml-multiple-diagram.plantuml
+      📂 pages
+        📂 diagrams
+          📄 plantuml.adoc
+----
+
+An example, like a PlantUML diagram, can be included by adding a link:https://docs.antora.org/antora/2.3/page/include-an-example/[include directive with the resource id of the example] within a `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg"]
+----
+\include::example$diagrams/plantuml-single-diagram.plantuml[]
+----
+....
+
+The above blocks will be converted to an HTML image tag with source pointing to the PlantUML instance.
+
+[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-single-diagram.plantuml[]
+----
+
+A PlantUML diagram from a file which contains multipe diagrams can be included by the use of tags in order to specify regions.
+
+In a PlantUML file, a region can be defined by a beginning tag `'tag::name[]` and an end tag `'end::name[]`.
+
+The PlantUML file `plantuml-multiple-diagram.plantuml` has the defined tags `first_diagram` and `second_diagram`.
+
+[source,plantuml]
+----
+include::example$diagrams/plantuml-multiple-diagrams.plantuml[]
+----
+
+PlantUML diagrams from a multi diagram file can be included by adding a include directive with a tag within a `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg"]
+----
+\include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=first_diagram]
+----
+
+[plantuml, format="svg"]
+----
+\include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=second_diagram]
+----
+....
+
+The above blocks will be converted to HTML image tags with sources pointing to the PlantUML instances.
+
+[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=first_diagram]
+----
+
+[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=second_diagram]
+----

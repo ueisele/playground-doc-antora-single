@@ -1,0 +1,30 @@
+{
+  "name": "antora-examples",
+  "version": "0.1.0",
+  "description": "build static site using antora",
+  "devDependencies": {
+    "@antora/cli": "^2.3.1",
+    "@antora/site-generator-default": "^2.3.1",
+    "asciidoctor-plantuml": "^1.5.0"
+  },
+  "dependencies": {
+    "node-srv": "^3.0.2"
+  },
+  "config": {
+    "antora": {
+      "cacheDir": ".cache/antora",
+      "outDir": "public"
+    },
+    "server": {
+      "port": 8000
+    }
+  },
+  "scripts": {
+    "generate": "antora --fetch --cache-dir=$npm_package_config_antora_cacheDir --clean --to-dir=$npm_package_config_antora_outDir antora-playbook.yml",
+    "start": "node-srv --port $npm_package_config_server_port public/",
+    "clean:build": "rm -r $npm_package_config_antora_cacheDir; rm -r $npm_package_config_antora_outDir; true",
+    "clean:node": "rm -r node_modules; rm package-lock.json; true",
+    "clean": "npm run clean:build && npm run clean:node"
+  },
+  "private": true
+}

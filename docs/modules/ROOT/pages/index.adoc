@@ -1,9 +1,72 @@
-= Antora Single Repository Examples
+:toc:
+:toc-title:
+:sectnums:
+:toclevels: 3
+
+= Antora Examples
+
+== Overview
 
 This repository contains an Antora playbook as well as content. Goal is to demonstrate different render capabilities of Antora.
 
 A good demonstration of a multi repository documentation can be found an the https://gitlab.com/antora/demo[Antora Demo] on GitLab.
 
-== Diagrams
+This Antora documentation is publish to https://ueisele-playground.gitlab.io/doc-antora-single via GitLab-CI Pipeline.
 
-* xref:diagrams-inline.adoc[Inline Diagrams]
+== Limitations
+
+Antora 2.x uses link:https://www.npmjs.com/package/asciidoctor.js[asciidoctor.js] 1.5. 
+Therefore, thew new Asciidoctor 2 syntax is not supported by Antora until now. The upgrade to Asciidoctor 2 is planned for the next major release of Antora, because it is a breaking change (see link:https://gitlab.com/antora/antora/-/issues/522[#522]).
+
+== Quick Start
+
+First clone the repository https://gitlab.com/ueisele-playground/doc-antora-single.git
+
+To generate the documentation localy with Antora, you need a local `node` installation or `Docker`.
+
+=== Generate and Run with Node
+
+First fetch the required dependencies:
+
+[source,bash]
+----
+npm install
+----
+
+This command stores all dependencies in the folder `./node_modules`.
+
+Now, the documentation can be generated:
+
+[source,bash]
+----
+npm generate
+----
+
+This generates the HTML5 documentation and stores it in the folder `./public`.
+
+Finally, a local HTTP server can be started to serve the generated content at http://localhost:8000:
+
+[source,bash]
+----
+npm start
+----
+
+=== Generate and Run with Docker
+
+If you dou not have a local `node` installation, you can use `Docker` as an alternative.
+
+The documentation can be generated with the command:
+
+[source,bash]
+----
+./local/docker-generate.sh
+----
+
+This generates the HTML5 documentation and stores it in the folder `./public`.
+
+Finally, a local HTTP server can be started to serve the generated content at http://localhost:8080:
+
+[source,bash]
+----
+./local/docker-startserver.sh
+----
