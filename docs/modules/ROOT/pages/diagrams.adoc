@@ -1,7 +1,120 @@
+:toc:
+:toc-title:
+:sectnums:
+:toclevels: 3
+
+:antora_version: 2.3
+
 = Diagrams
 
 == Overview
 
-It's possible to generate diagrams and flowcharts from text in Antora using:
+Antora does not support diagrams from textual descriptions by default. In order to include diagrams from textual descriptions several extensions are available.
 
-* xref:diagrams/plantuml.adoc[PlantUML]
+== Extensions
+
+In this example the xref:diagrams/extensions/kroki.adoc[Kroki] extension is used in favour of xref:diagrams/extensions/plantuml.adoc[PlantUML], because it supports a lot of additional link:https://kroki.io/#support[diagram types].
+
+== Diagram Types
+
+Diagram types, which are rendered with link:https://kroki.io/#support[Kroki]:
+
+* xref:diagrams/types/plantuml.adoc[PlantUML]
+
+== Styles
+
+Diagrams can be defined <<Inline>>, as well as with <<Includes>>. 
+To show how it works PlantUML diagrams are used. However, this is completely independet form the diagram type.
+
+=== Inline
+
+In order to generate a diagram, you should write your text inside a block, for example a `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg", id="myDiagram"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+....
+
+The above blocks will be converted to an HTML image tag with source pointing to the rendered image. 
+
+[plantuml, format="png"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+
+=== Includes
+
+It is also possible include diagrams from files. Non-AsciiDoc files that contain reusable content are called examples in Antora and saved in the link:https://docs.antora.org/antora/{antora_version}/examples-directory/[examples-directory]
+
+----
+📂 docs
+  📂 modules
+    📂 ROOT
+      📂 examples
+        📂 diagrams
+          📄 plantuml-single-diagram.plantuml
+          📄 plantuml-multiple-diagram.plantuml
+      📂 pages
+        📄 diagrams.adoc
+----
+
+An example, like a PlantUML diagram, can be included by adding a link:https://docs.antora.org/antora/{antora_version}/page/include-an-example/[include directive with the resource id of the example] within a block, like in this example within a `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg"]
+----
+\include::example$diagrams/plantuml-single-diagram.plantuml[]
+----
+....
+
+The above blocks will be converted to an HTML image tag with source pointing to the rendered image.
+
+[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-single-diagram.plantuml[]
+----
+
+A textual diagram description from a file which contains multipe diagrams can be included by the use of tags in order to specify regions.
+
+In a PlantUML file, a region can be defined by a beginning tag `'tag::name[]` and an end tag `'end::name[]`. 
+For each diagram type the character `'` must be replaced with the comment indicator of the respective diagram type.
+
+The PlantUML file `plantuml-multiple-diagram.plantuml` has the defined tags `first_diagram` and `second_diagram`.
+
+[source,plantuml]
+----
+include::example$diagrams/plantuml-multiple-diagrams.plantuml[]
+----
+
+Diagrams from a multi diagram file can be included by adding a include directive with a tag within a block, like in this example within a `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="svg"]
+----
+\include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=first_diagram]
+----
+
+[plantuml, format="svg"]
+----
+\include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=second_diagram]
+----
+....
+
+The above blocks will be converted to HTML image tags with sources pointing to the rendered.
+
+[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=first_diagram]
+----
+
+[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=second_diagram]
+----

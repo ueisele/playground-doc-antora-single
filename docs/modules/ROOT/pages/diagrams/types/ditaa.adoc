@@ -1,0 +1,82 @@
+= Ditaa
+
+If you're new to using Mermaid or need help identifying issues in your Mermaid code, the [Mermaid Live Editor](https://mermaid-js.github.io/mermaid-live-editor/) is a helpful tool for creating and resolving issues within Mermaid diagrams.
+
+== Syntax GitLab
+
+How to use Mermaid with GitLab is described at the GitLab Markdown Documentation in the section [Diagrams and Flowcharts](https://gitlab.com/gitlab-org/gitlab/blob/master/doc/user/markdown.md#diagrams-and-flowcharts).
+
+In order to generate a diagram or flowchart, you should write your text inside the `mermaid` block:
+
+[source,asciidoc]
+....
+[mermaid]
+----
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+----
+....
+
+[ditaa]
+----
+    +--------+   +-------+    +-------+
+    |        | --+ ditaa +--> |       |
+    |  Text  |   +-------+    |diagram|
+    |Document|   |!magic!|    |       |
+    |     {d}|   |       |    |       |
+    +---+----+   +-------+    +-------+
+        :                         ^
+        |       Lots of work      |
+        +-------------------------+
+----
+
+
+[source]
+----
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+----
+
+Subgraphs can also be included:
+
+````markdown
+```mermaid
+graph TB
+
+  SubGraph1 --> SubGraph1Flow
+  subgraph "SubGraph 1 Flow"
+  SubGraph1Flow(SubNode 1)
+  SubGraph1Flow -- Choice1 --> DoChoice1
+  SubGraph1Flow -- Choice2 --> DoChoice2
+  end
+
+  subgraph "Main Graph"
+  Node1[Node 1] --> Node2[Node 2]
+  Node2 --> SubGraph1[Jump to SubGraph1]
+  SubGraph1 --> FinalThing[Final Thing]
+end
+```
+````
+
+```mermaid
+graph TB
+
+  SubGraph1 --> SubGraph1Flow
+  subgraph "SubGraph 1 Flow"
+  SubGraph1Flow(SubNode 1)
+  SubGraph1Flow -- Choice1 --> DoChoice1
+  SubGraph1Flow -- Choice2 --> DoChoice2
+  end
+
+  subgraph "Main Graph"
+  Node1[Node 1] --> Node2[Node 2]
+  Node2 --> SubGraph1[Jump to SubGraph1]
+  SubGraph1 --> FinalThing[Final Thing]
+end
+```

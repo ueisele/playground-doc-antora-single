@@ -1,3 +1,10 @@
 * xref:index.adoc[Overview]
 * xref:diagrams.adoc[Diagrams]
-** xref:diagrams/plantuml.adoc[PlantUML]
+** Extension
+*** xref:diagrams/extensions/kroki.adoc[Kroki]
+*** xref:diagrams/extensions/plantuml.adoc[PlantUML]
+** Types
+*** xref:diagrams/types/plantuml.adoc[PlantUML]
+*** xref:diagrams/types/graphviz.adoc[Graphviz]
+*** xref:diagrams/types/ditaa.adoc[Ditaa]
+*** xref:diagrams/types/mermaid.adoc[Mermaid]

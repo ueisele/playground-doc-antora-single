@@ -1,0 +1,80 @@
+:toc:
+:toc-title:
+:sectnums:
+:toclevels: 3
+
+= Kroki
+
+Kroki provides an unified HTTP API to create diagrams from textual descriptions. 
+It supports many different diagram types form multiple libraries like BlockDiag (BlockDiag, SeqDiag, ActDiag, NwDiag, PacketDiag, RackDiag), C4 (with PlantUML), Ditaa, Erd, GraphViz, Mermaid, Nomnoml, PlantUML, SvgBob, UMLet, Vega, Vega-Lite, WaveDrom. 
+
+A full list of supported diagram types is given on the link:https://kroki.io/#support[Kroki Webpage].
+
+TIP: Kroki has full support for the link:https://plantuml.com/[PlantUML] language, and supports all link:https://plantuml.com/[diagram types] that PlantUML supports. Therefore Kroki language server can be used as an replacement for PlantUML language server.
+
+If you're new to using textual diagram descriptions or need help identifying issues in your code, the link:https://kroki.io/#try[Kroki Live Editor] is a helpful tool for creating and resolving issues within diagrams.
+
+== Antora
+
+Antora integration is achieved with the Asciidoctor.js Kroki extension link:http://github.com/mogztter/asciidoctor-kroki[asciidoctor-kroki].
+
+=== Installation
+
+The extension can be installed via `npm`:
+
+[source,bash]
+----
+npm install asciidoctor-kroki
+----
+
+Alternatively, it can also be specified in the `package.json` file of the Antora project.
+
+.package.json
+[source,json]
+----
+  "devDependencies": {
+    "asciidoctor-kroki": "^0.8.2"
+  }
+----
+
+=== Configuration
+
+The extensions can be activated by adding it to the `asciidoc` section of the Antora playbook.
+
+.antora-playbook.yml
+[source,yaml]
+----
+asciidoc:
+  attributes:
+    kroki-server-url: https://kroki.io
+    kroki-fetch-diagram: true
+  extensions:
+  - asciidoctor-kroki  
+----
+
+The `kroki-server-url` attribute is important, because the extension uses the Kroki server to render diagrams.
+By default, this extension sends information and receives diagrams back from https://kroki.io.
+However, it is also possible to run it as a link:https://docs.kroki.io/kroki/setup/install/#_using_docker[self-managed server], for example using Docker.
+
+TIP: You can use the `kroki-fetch-diagram` option to download the images from Kroki at build time. In other words, while viewing pages you won't rely on Kroki anymore.
+
+== VSCode
+
+All you need to do is to get the link:https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode[AsciiDoc extension], activate Kroki and set the Kroki server Url.
+
+The option we will use for this feature is `asciidoc.preview.attributes` that allows you to set arbitrary AsciiDoc attributes. These attributes will be injected into the preview.
+This extension needs the `:kroki-server-url:` attribute to be set in the AsciiDoc document to become active and parse PlantUML blocks.
+
+So all you need to do in VS Code is to hop into your user settings and add the following entry:
+
+[source,json]
+----
+"asciidoc.use_kroki": true,
+"asciidoc.preview.attributes": {
+  "kroki-server-url": "https://kroki.io/"
+}
+----
+
+It is also possible to run it as a link:https://docs.kroki.io/kroki/setup/install/#_using_docker[self-managed server], for example using Docker.
+
+IMPORTANT: The VScode AsciiDoc Extension does not support all diagram types supporten by Kroki even if Kroki is enabled.

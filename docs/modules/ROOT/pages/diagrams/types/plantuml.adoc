@@ -1,0 +1,75 @@
+:toc:
+:toc-title:
+:sectnums:
+:toclevels: 3
+
+:antora_version: 2.3
+
+= PlantUML
+
+It's possible to generate diagrams and flowcharts from text in Antora using link:https://plantuml.com/[PlantUML].
+
+If you're new to using PlantUML or need help identifying issues in your PlantUML code, the link:http://plantuml.com/plantuml/[PlantUML Live Editor] is a helpful tool for creating and resolving issues within PlantUML diagrams.
+
+== Integration
+
+=== Antora
+
+Integration of PlantUML in Antora is achievied by xref:diagrams/extensions/kroki.adoc[Kroki] or xref:diagrams/extensions/plantuml.adoc[PlantUML] extension.
+
+=== VSCode
+
+VSCode can render PlantUML in AsciiDoc with the VSCode link:https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode[AsciiDoc extension] and a configured xref:diagrams/extensions/kroki.adoc#_vscode[Kroki server] or xref:diagrams/extensions/plantuml.adoc#_vscode[PlantUML server].
+
+== Syntax
+
+PlantUML diagrams can be defined <<Inline>> as well as <<Includes>>.
+
+=== Inline
+
+In order to generate a diagram or flowchart, you should write your text inside the `plantuml` block:
+
+[source,asciidoc]
+....
+[plantuml, format="png", id="myDiagram"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+....
+
+The above blocks will be converted to an HTML image tag with source pointing to the rendered image. If the PlantUML server is correctly configured, this should render a nice diagram instead of the block:
+
+[plantuml, format="png"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+
+AsciiDoc also supports `svg` as output format:
+
+[source,asciidoc]
+....
+[plantuml, format="svg", id="myDiagram"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+....
+
+[plantuml, format="svg"]
+----
+Bob -> Alice : hello
+Alice -> Bob : hi
+----
+
+Inside the block you can add any of the supported diagrams by PlantUML such as link:https://plantuml.com/sequence-diagram[Sequence], link:https://plantuml.com/use-case-diagram[Use Case], link:https://plantuml.com/class-diagram[Class], link:https://plantuml.com/activity-diagram-legacy[Activity], link:https://plantuml.com/component-diagram[Component], link:https://plantuml.com/state-diagram[State], and link:https://plantuml.com/object-diagram[Object] diagrams. You do not need to use the PlantUML diagram delimiters `@startuml`/`@enduml` as these are replaced by the AsciiDoc `plantuml` block.
+
+A full list of supported PlantUML diagram types is given on the link:https://plantuml.com/[PlantUML Webpage].
+
+Some parameters can be added to the AsciiDoc block definition:
+
+* _format_: Can be either `png` or `svg`. Note that `svg` is not supported by all browsers so use with care. The default is `png`.
+* _id_: A CSS id added to the diagram HTML tag.
+* _width_: Width attribute added to the image tag.
+* _height_: Height attribute added to the image tag.

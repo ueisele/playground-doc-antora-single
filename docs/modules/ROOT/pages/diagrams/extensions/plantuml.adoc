@@ -1,0 +1,81 @@
+:toc:
+:toc-title:
+:sectnums:
+:toclevels: 3
+
+= PlantUML
+
+PlantUML is a component that allows to quickly write diagrams using a simple and intuitive textual language.
+The textual language in which diagrams can be defined is also called PlantUML (see link:https://plantuml.com/guide[PlantUML Language Reference Guide]).
+
+Besides UML diagrams, PlantUML supports also non-UML diagram types like Ditaa and Graphiz (DOT), Gantt and MindMap.
+A full list of supported PlantUML diagram types is given on the link:https://plantuml.com/[PlantUML Webpage].
+
+PlantUML also provides an HTTP API to create diagrams from textual descriptions, which is also used by the Asciidoc PlantUML extension. 
+
+If you're new to using PlantUML or need help identifying issues in your PlantUML code, the link:http://plantuml.com/plantuml/[PlantUML Live Editor] is a helpful tool for creating and resolving issues within PlantUML diagrams.
+
+== Antora
+
+Antora integration is achieved with the Asciidoctor.js PlantUML extension link:https://github.com/eshepelyuk/asciidoctor-plantuml.js[asciidoctor-plantuml].
+
+=== Installation
+
+The extension can be installed via `npm`:
+
+[source,bash]
+----
+npm install asciidoctor-plantuml
+----
+
+Alternatively, it can also be specified in the `package.json` file of the Antora project.
+
+.package.json
+[source,json]
+----
+  "devDependencies": {
+    "asciidoctor-plantuml": "^1.5.0"
+  }
+----
+
+=== Configuration
+
+The extensions can be activated by adding it to the `asciidoc` section of the Antora playbook.
+
+.antora-playbook.yml
+[source,yaml]
+----
+asciidoc:
+  attributes:
+    plantuml-server-url: "http://plantuml.com/plantuml"
+    plantuml-fetch-diagram: true
+  extensions:
+  - asciidoctor-plantuml  
+----
+
+The `plantuml-server-url` attribute is important, because the extension uses the PlantUML server to render diagrams.
+By default, this extension sends information and receives diagrams back from http://plantuml.com/plantuml.
+However, it is also possible to run it as a link:https://github.com/plantuml/plantuml-server[self-managed server], for example using Docker.
+
+TIP: You can use the `plantuml-fetch-diagram` option to download the images from PlantUML at build time. In other words, while viewing pages you won't rely on Kroki anymore.
+
+== VSCode
+
+All you need to do is to get the link:https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode[AsciiDoc extension], and set the PlantUML server Url.
+
+The option we will use for this feature is `asciidoc.preview.attributes` that allows you to set arbitrary AsciiDoc attributes. These attributes will be injected into the preview.
+This extension needs the `:plantuml-server-url:` attribute to be set in the AsciiDoc document to become active and parse PlantUML blocks.
+
+So all you need to do in VS Code is to hop into your user settings and add the following entry:
+
+[source,json]
+----
+"asciidoc.preview.attributes": {
+  "plantuml-server-url": "http://plantuml.com/plantuml"
+}
+----
+
+The downside of using the public server is that it does not offer SSL encrypted endpoints and you must weaken your VS Code security settings to preview correctly.
+To do this open your command palette (⌘+P, ctrl+shift+P) and enter `asciidoc preview security` and choose `Allow insecure content`.
+
+It is also possible to run it as a link:https://github.com/plantuml/plantuml-server[self-managed server], for example using Docker.
