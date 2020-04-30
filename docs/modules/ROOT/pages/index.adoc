@@ -15,7 +15,7 @@ This Antora documentation is publish to https://ueisele-playground.gitlab.io/doc
 
 == Limitations
 
-Antora 2.x uses link:https://www.npmjs.com/package/asciidoctor.js[asciidoctor.js] 1.5. 
+Antora 2.x uses link:https://www.npmjs.com/package/asciidoctor.js[asciidoctor.js] 1.5.x. 
 Therefore, thew new Asciidoctor 2 syntax is not supported by Antora until now. The upgrade to Asciidoctor 2 is planned for the next major release of Antora, because it is a breaking change (see link:https://gitlab.com/antora/antora/-/issues/522[#522]).
 
 == Quick Start
