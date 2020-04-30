@@ -39,7 +39,7 @@ Now, the documentation can be generated:
 
 [source,bash]
 ----
-npm generate
+npm run generate
 ----
 
 This generates the HTML5 documentation and stores it in the folder `./public`.
