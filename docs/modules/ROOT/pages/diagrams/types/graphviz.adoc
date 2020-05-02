@@ -29,7 +29,6 @@ digraph D {
 }
 ----
 
-
 [source]
 ----
 graph TD;
