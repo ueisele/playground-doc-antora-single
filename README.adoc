@@ -1,9 +1,1 @@
 include::docs/modules/ROOT/pages/index.adoc[]
-
-== Test
-
-[plantuml]
-----
-Bob -> Alice : hello, what time is it now?
-Alice -> Bob : hi, it is %date()
-----
