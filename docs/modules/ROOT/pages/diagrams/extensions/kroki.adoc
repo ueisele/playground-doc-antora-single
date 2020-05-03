@@ -77,4 +77,14 @@ So all you need to do in VS Code is to hop into your user settings and add the f
 
 It is also possible to run it as a link:https://docs.kroki.io/kroki/setup/install/#_using_docker[self-managed server], for example using Docker.
 
-IMPORTANT: The VScode AsciiDoc Extension does not support all diagram types supporten by Kroki even if Kroki is enabled.
+IMPORTANT: The VScode AsciiDoc Extension does not support all diagram types supported by Kroki even if Kroki is enabled.
+
+=== Limitations
+
+==== PlantUML
+
+Though the Kroki server uses the original PlantUML library for rendering diagrams definied in PlantUML textual languange, it does not support all features.
+
+* `!include` directive and its variations are not supported by Kroki. It is not possbile to include files from remote sources. This feature is explicilty disabled by the Kroki server, probably because of security concerns.
+* `ditaa` rendered by PlantUML is not supported by Kroki. Therefore, `plantuml` blocks which contain the `ditaa` keyword (like describe in the <<Ditaa>> section) are not rendered by Kroki. In order to use `ditaa` with Kroki, a `ditaa` block has to be used instead of a `plantuml` block. However, this is not supported by GitLab.
+* `C4-PlantUML` rendered by PlantUML is not supported by Kroki. Therefore, `plantuml` blocks which contain the `C4-PlantUML` syntax (like describe in the <<C4 PlantUML>> section) are not rendered by Kroki. The reason is, that Kroki does ignore the `!include` directive. In order to use `C4-PlantUML` with Kroki, a `c4plantuml` block has to be used instead of a `plantuml` block. However, this is not supported by GitLab.
