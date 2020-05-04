@@ -19,7 +19,7 @@ jobs:
       - name: 'Disable Jekyll'
         run: touch public/.nojekyll
       - name: 'Deploy to gh-pages branch'
-        uses: JamesIves/github-pages-deploy-action@releases/v3 # https://github.com/JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@releases/v2 # https://github.com/JamesIves/github-pages-deploy-action
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BASE_BRANCH: master # The base branch of your repository which you'd like to checkout prior to deploying.
