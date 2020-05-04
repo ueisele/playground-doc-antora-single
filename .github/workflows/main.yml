@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-18.04 # One of https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     steps:
       - name: checkout
-        uses: actions/checkout@v2 # https://github.com/actions/checkout
+        uses: actions/checkout@v1 # https://github.com/actions/checkout
         with:
           persist-credentials: false
       - name: Generate Site
