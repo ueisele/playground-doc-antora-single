@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-18.04 # One of https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 # https://github.com/actions/checkout
         with:
           persist-credentials: false
       - name: Generate Site
@@ -19,7 +19,7 @@ jobs:
       - name: 'Disable Jekyll'
         run: touch public/.nojekyll
       - name: 'Deploy to gh-pages branch'
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v3 # https://github.com/JamesIves/github-pages-deploy-action
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # This is the branch you wish to deploy to.
