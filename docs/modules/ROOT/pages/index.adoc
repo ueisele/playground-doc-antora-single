@@ -11,7 +11,10 @@ This repository contains an Antora playbook as well as content. Goal is to demon
 
 A good demonstration of a multi repository documentation can be found an the https://gitlab.com/antora/demo[Antora Demo] on GitLab.
 
-This Antora documentation is publish to https://ueisele-playground.gitlab.io/doc-antora-single via GitLab-CI Pipeline.
+This Antora documentation is publish to https://ueisele-playground.gitlab.io/doc-antora-single via GitLab-CI Pipeline and to https://ueisele.github.io/playground-doc-antora-single via GitHub Actions Workflow.
+
+This repository is hosted on link:https://gitlab.com/ueisele-playground/doc-antora-single[GitLab] and link:https://github.com/ueisele/playground-doc-antora-single[GitHub]. Changes are only committed to the repository on GitLab.
+The repository on GitHub is only a mirror which is automaticaly updated via push by GitLab (link:https://gitlab.com/help/user/project/repository/repository_mirroring.md[Read more]).
 
 == Limitations
 
