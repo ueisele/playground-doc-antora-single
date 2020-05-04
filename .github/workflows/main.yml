@@ -1,0 +1,26 @@
+
+name: Build Antora Site for GitHub Pages
+on: 
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    runs-on: node:12.16-slim    
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Generate Site
+        run: |
+          npm install
+          npm run generate
+      - name: 'Disable Jekyll'
+        run: touch public/.nojekyll
+      - name: 'Deploy to gh-pages branch'
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages # This is the branch you wish to deploy to.
+          FOLDER: public # The folder in your repository that you want to deploy.
