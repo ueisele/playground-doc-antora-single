@@ -22,5 +22,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3 # https://github.com/JamesIves/github-pages-deploy-action
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BASE_BRANCH: master # The base branch of your repository which you'd like to checkout prior to deploying.
           BRANCH: gh-pages # This is the branch you wish to deploy to.
           FOLDER: public # The folder in your repository that you want to deploy.
