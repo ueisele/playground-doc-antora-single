@@ -681,8 +681,6 @@ ditaa
 ----
 ....
 
-[source,asciidoc]
-....
 [plantuml]
 ----
 ditaa
@@ -696,7 +694,6 @@ ditaa
     |       Lots of work      |
     +-------------------------+
 ----
-....
 
 === DOT (Graphviz)
 
@@ -886,8 +883,6 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 ----
 ....
 
-[source,asciidoc]
-....
 [plantuml]
 ----
 !include https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
@@ -901,7 +896,6 @@ System(twitter, "Twitter")
 Rel(admin, web_app, "Uses", "HTTPS")
 Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 ----
-....
 
 The link:https://github.com/RicardoNiepel/C4-PlantUML#supported-diagram-types[supported diagram types] are documented on the link:https://github.com/RicardoNiepel/C4-PlantUML#supported-diagram-types[C4-PlantUML] GitHub page.
 
@@ -950,8 +944,6 @@ Rel_Composition_Up(ACSAP, ACSAPFin)
 ----
 ....
 
-[source,asciidoc]
-....
 [plantuml]
 ----
 !include https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/v1.0.0/Archimate.puml
@@ -977,7 +969,6 @@ Rel_Composition_Up(ACSAPFin, ACSAPFinanceAccRec)
 Rel_Composition_Up(ACSAP, ACSAPHR)
 Rel_Composition_Up(ACSAP, ACSAPFin)
 ----
-....
 
 The link:https://github.com/ebbypeter/Archimate-PlantUML#usage[usage] is explained on the link:https://github.com/ebbypeter/Archimate-PlantUML#usage[Archimate-PlantUML] GitHub page.
 
@@ -998,15 +989,12 @@ f(t)=(a_0)/2 + sum_(n=1)^ooa_ncos((npit)/L)+sum_(n=1)^oo b_n\ sin((npit)/L)
 ----
 ....
 
-[source,asciidoc]
-....
 [plantuml]
 ----
 @startmath
 f(t)=(a_0)/2 + sum_(n=1)^ooa_ncos((npit)/L)+sum_(n=1)^oo b_n\ sin((npit)/L)
 @endmath
 ----
-....
 
 [source,asciidoc]
 ....
@@ -1018,12 +1006,9 @@ f(t)=(a_0)/2 + sum_(n=1)^ooa_ncos((npit)/L)+sum_(n=1)^oo b_n\ sin((npit)/L)
 ----
 ....
 
-[source,asciidoc]
-....
 [plantuml]
 ----
 @startlatex
 \sum_{i=0}^{n-1} (a_i + b_i^2)
 @endlatex
 ----
-....

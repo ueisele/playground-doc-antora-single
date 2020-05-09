@@ -47,14 +47,14 @@ The extensions can be activated by adding it to the `asciidoc` section of the An
 ----
 asciidoc:
   attributes:
-    plantuml-server-url: "http://plantuml.com/plantuml"
+    plantuml-server-url: "https://plantuml.gitlab-static.net"
     plantuml-fetch-diagram: true
   extensions:
   - asciidoctor-plantuml  
 ----
 
 The `plantuml-server-url` attribute is important, because the extension uses the PlantUML server to render diagrams.
-By default, this extension sends information and receives diagrams back from http://plantuml.com/plantuml.
+By default, this extension sends information and receives diagrams back from http://plantuml.com/plantuml. We use https://plantuml.gitlab-static.net bevause it uses `https` and seems to be more stable.
 However, it is also possible to run it as a link:https://github.com/plantuml/plantuml-server[self-managed server], for example using Docker.
 
 TIP: You can use the `plantuml-fetch-diagram` option to download the images from PlantUML at build time. In other words, while viewing pages you won't rely on Kroki anymore.
