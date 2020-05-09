@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://ueisele-playground.gitlab.io/doc-antora-single/antora-examples/0.1.0/diagrams.html</loc>
+<lastmod>2020-05-09T17:09:07.263Z</lastmod>
+</url>
+<url>
+<loc>https://ueisele-playground.gitlab.io/doc-antora-single/antora-examples/0.1.0/diagrams/extensions/kroki.html</loc>
+<lastmod>2020-05-09T17:09:07.263Z</lastmod>
+</url>
+<url>
+<loc>https://ueisele-playground.gitlab.io/doc-antora-single/antora-examples/0.1.0/diagrams/extensions/plantuml.html</loc>
+<lastmod>2020-05-09T17:09:07.263Z</lastmod>
+</url>
+<url>
+<loc>https://ueisele-playground.gitlab.io/doc-antora-single/antora-examples/0.1.0/diagrams/types/plantuml.html</loc>
+<lastmod>2020-05-09T17:09:07.263Z</lastmod>
+</url>
+<url>
+<loc>https://ueisele-playground.gitlab.io/doc-antora-single/antora-examples/0.1.0/index.html</loc>
+<lastmod>2020-05-09T17:09:07.263Z</lastmod>
+</url>
+</urlset>

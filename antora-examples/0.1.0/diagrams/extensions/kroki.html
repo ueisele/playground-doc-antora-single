@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kroki :: Antora Examples</title>
+    <link rel="canonical" href="https://ueisele-playground.gitlab.io/doc-antora-single/antora-examples/0.1.0/diagrams/extensions/kroki.html">
+    <meta name="generator" content="Antora 2.3.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://ueisele-playground.gitlab.io/doc-antora-single">Antora Examples</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="antora-examples" data-version="0.1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Antora Examples</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../diagrams.html">Diagrams</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Extension</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="kroki.html">Kroki</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="plantuml.html">PlantUML</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Types</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/plantuml.html">PlantUML</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Antora Examples</span>
+    <span class="version">0.1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Antora Examples</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">0.1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Antora Examples</a></li>
+    <li><a href="../../diagrams.html">Diagrams</a></li>
+    <li>Extension</li>
+    <li><a href="kroki.html">Kroki</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/ueisele/playground-doc-antora-single/edit/HEAD/docs/modules/ROOT/pages/diagrams/extensions/kroki.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Kroki</h1>
+<div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#_antora">1. Antora</a>
+<ul class="sectlevel2">
+<li><a href="#_installation">1.1. Installation</a></li>
+<li><a href="#_configuration">1.2. Configuration</a></li>
+</ul>
+</li>
+<li><a href="#_vscode">2. VSCode</a>
+<ul class="sectlevel2">
+<li><a href="#_limitations">2.1. Limitations</a>
+<ul class="sectlevel3">
+<li><a href="#_plantuml">2.1.1. PlantUML</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kroki provides an unified HTTP API to create diagrams from textual descriptions.
+It supports many different diagram types form multiple libraries like BlockDiag (BlockDiag, SeqDiag, ActDiag, NwDiag, PacketDiag, RackDiag), C4 (with PlantUML), Ditaa, Erd, GraphViz, Mermaid, Nomnoml, PlantUML, SvgBob, UMLet, Vega, Vega-Lite, WaveDrom.</p>
+</div>
+<div class="paragraph">
+<p>A full list of supported diagram types is given on the <a href="https://kroki.io/#support">Kroki Webpage</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Kroki has full support for the <a href="https://plantuml.com/">PlantUML</a> language, and supports all <a href="https://plantuml.com/">diagram types</a> that PlantUML supports. Therefore Kroki language server can be used as an replacement for PlantUML language server.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re new to using textual diagram descriptions or need help identifying issues in your code, the <a href="https://kroki.io/#try">Kroki Live Editor</a> is a helpful tool for creating and resolving issues within diagrams.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_antora"><a class="anchor" href="#_antora"></a>1. Antora</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Antora integration is achieved with the Asciidoctor.js Kroki extension <a href="http://github.com/mogztter/asciidoctor-kroki">asciidoctor-kroki</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_installation"><a class="anchor" href="#_installation"></a>1.1. Installation</h3>
+<div class="paragraph">
+<p>The extension can be installed via <code>npm</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install asciidoctor-kroki</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively, it can also be specified in the <code>package.json</code> file of the Antora project.</p>
+</div>
+<div class="listingblock">
+<div class="title">package.json</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">  "devDependencies": {
+    "asciidoctor-kroki": "^0.8.2"
+  }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration"><a class="anchor" href="#_configuration"></a>1.2. Configuration</h3>
+<div class="paragraph">
+<p>The extensions can be activated by adding it to the <code>asciidoc</code> section of the Antora playbook.</p>
+</div>
+<div class="listingblock">
+<div class="title">antora-playbook.yml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">asciidoc:
+  attributes:
+    kroki-server-url: https://kroki.io
+    kroki-fetch-diagram: true
+  extensions:
+  - asciidoctor-kroki</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>kroki-server-url</code> attribute is important, because the extension uses the Kroki server to render diagrams.
+By default, this extension sends information and receives diagrams back from <a href="https://kroki.io" class="bare">https://kroki.io</a>.
+However, it is also possible to run it as a <a href="https://docs.kroki.io/kroki/setup/install/#_using_docker">self-managed server</a>, for example using Docker.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can use the <code>kroki-fetch-diagram</code> option to download the images from Kroki at build time. In other words, while viewing pages you won&#8217;t rely on Kroki anymore.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vscode"><a class="anchor" href="#_vscode"></a>2. VSCode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All you need to do is to get the <a href="https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode">AsciiDoc extension</a>, activate Kroki and set the Kroki server Url.</p>
+</div>
+<div class="paragraph">
+<p>The option we will use for this feature is <code>asciidoc.preview.attributes</code> that allows you to set arbitrary AsciiDoc attributes. These attributes will be injected into the preview.
+This extension needs the <code>:kroki-server-url:</code> attribute to be set in the AsciiDoc document to become active and parse PlantUML blocks.</p>
+</div>
+<div class="paragraph">
+<p>So all you need to do in VS Code is to hop into your user settings and add the following entry:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"asciidoc.use_kroki": true,
+"asciidoc.preview.attributes": {
+  "kroki-server-url": "https://kroki.io/"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is also possible to run it as a <a href="https://docs.kroki.io/kroki/setup/install/#_using_docker">self-managed server</a>, for example using Docker.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The VScode AsciiDoc Extension does not support all diagram types supported by Kroki even if Kroki is enabled.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_limitations"><a class="anchor" href="#_limitations"></a>2.1. Limitations</h3>
+<div class="sect3">
+<h4 id="_plantuml"><a class="anchor" href="#_plantuml"></a>2.1.1. PlantUML</h4>
+<div class="paragraph">
+<p>Though the Kroki server uses the original PlantUML library for rendering diagrams definied in PlantUML textual languange, it does not support all features.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>!include</code> directive and its variations are not supported by Kroki. It is not possbile to include files from remote sources. This feature is explicilty disabled by the Kroki server, probably because of security concerns.</p>
+</li>
+<li>
+<p><code>ditaa</code> rendered by PlantUML is not supported by Kroki. Therefore, <code>plantuml</code> blocks which contain the <code>ditaa</code> keyword (like describe in the <a href="#Ditaa">[Ditaa]</a> section) are not rendered by Kroki. In order to use <code>ditaa</code> with Kroki, a <code>ditaa</code> block has to be used instead of a <code>plantuml</code> block. However, this is not supported by GitLab.</p>
+</li>
+<li>
+<p><code>C4-PlantUML</code> rendered by PlantUML is not supported by Kroki. Therefore, <code>plantuml</code> blocks which contain the <code>C4-PlantUML</code> syntax (like describe in the <a href="#C4 PlantUML">[C4 PlantUML]</a> section) are not rendered by Kroki. The reason is, that Kroki does ignore the <code>!include</code> directive. In order to use <code>C4-PlantUML</code> with Kroki, a <code>c4plantuml</code> block has to be used instead of a <code>plantuml</code> block. However, this is not supported by GitLab.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

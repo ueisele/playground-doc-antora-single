@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="195px" preserveAspectRatio="none" style="width:219px;height:195px;" version="1.1" viewBox="0 0 219 195" width="219px" zoomAndPan="magnify"><defs><filter height="300%" id="fhm7g2ci249nj" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b7189af1184f0077b348ad6ea2b0555f]
+entity DataAccess--><ellipse cx="43" cy="26.5" fill="#FEFECE" filter="url(#fhm7g2ci249nj)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="6" y="57.4999">DataAccess</text><!--MD5=[cbd7cda55f2530e2efe43ec72c097853]
+entity First Component--><rect fill="#FEFECE" filter="url(#fhm7g2ci249nj)" height="36.7999" style="stroke: #A80036; stroke-width: 1.5;" width="121" x="87.5" y="8"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="82.5" y="13"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="82.5" y="34.7999"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="101" x="97.5" y="31.9999">First Component</text><!--MD5=[96f7e1299d4a43069e6ed32352fcac20]
+entity HTTP--><ellipse cx="148" cy="151" fill="#FEFECE" filter="url(#fhm7g2ci249nj)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="129.5" y="181.9999">HTTP</text><!--MD5=[2ae2881eb3170b5cb800247e910df52c]
+link DataAccess to First Component--><path d="M52.02,26.5 C63.77,26.5 75.52,26.5 87.26,26.5 " fill="none" id="DataAccess-First Component" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b31ac7abd68f04ca600009a3528fb133]
+link First Component to HTTP--><path d="M148,45.05 C148,69.81 148,114.46 148,136.68 " fill="none" id="First Component-&gt;HTTP" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="148,141.82,152,132.82,148,136.82,144,132.82,148,141.82" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="13" x="149" y="89">us</text><!--MD5=[106c41e95d180e5feed5fa3a834aa24f]
+@startuml
+DataAccess - [First Component]
+[First Component] ..> HTTP : us
+@enduml
+
+PlantUML version 1.2020.08(Sun Apr 26 14:08:22 GMT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+10
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

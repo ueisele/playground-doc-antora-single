@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Diagrams :: Antora Examples</title>
+    <link rel="canonical" href="https://ueisele-playground.gitlab.io/doc-antora-single/antora-examples/0.1.0/diagrams.html">
+    <meta name="generator" content="Antora 2.3.1">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://ueisele-playground.gitlab.io/doc-antora-single">Antora Examples</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="antora-examples" data-version="0.1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Antora Examples</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Overview</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="diagrams.html">Diagrams</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Extension</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="diagrams/extensions/kroki.html">Kroki</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="diagrams/extensions/plantuml.html">PlantUML</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Types</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="diagrams/types/plantuml.html">PlantUML</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Antora Examples</span>
+    <span class="version">0.1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Antora Examples</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0.1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Antora Examples</a></li>
+    <li><a href="diagrams.html">Diagrams</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/ueisele/playground-doc-antora-single/edit/HEAD/docs/modules/ROOT/pages/diagrams.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Diagrams</h1>
+<div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#_overview">1. Overview</a></li>
+<li><a href="#_extensions">2. Extensions</a></li>
+<li><a href="#_diagram_types">3. Diagram Types</a></li>
+<li><a href="#_styles">4. Styles</a>
+<ul class="sectlevel2">
+<li><a href="#_inline">4.1. Inline</a></li>
+<li><a href="#_includes">4.2. Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Antora does not support diagrams from textual descriptions by default. In order to include diagrams from textual descriptions several extensions are available.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extensions"><a class="anchor" href="#_extensions"></a>2. Extensions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this example the <a href="diagrams/extensions/kroki.html" class="page">Kroki</a> extension is used in favour of <a href="diagrams/extensions/plantuml.html" class="page">PlantUML</a>, because <a href="https://github.com/eshepelyuk/asciidoctor-plantuml.js">asciidoctor-plantuml</a> extension is no longer maintained.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_diagram_types"><a class="anchor" href="#_diagram_types"></a>3. Diagram Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Diagram types, which are rendered with <a href="https://kroki.io/#support">Kroki</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="diagrams/types/plantuml.html" class="page">PlantUML</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_styles"><a class="anchor" href="#_styles"></a>4. Styles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Diagrams can be defined <a href="#_inline">Inline</a>, as well as with <a href="#_includes">Includes</a>.
+To show how it works PlantUML diagrams are used. However, this is completely independet form the diagram type.</p>
+</div>
+<div class="sect2">
+<h3 id="_inline"><a class="anchor" href="#_inline"></a>4.1. Inline</h3>
+<div class="paragraph">
+<p>In order to generate a diagram, you should write your text inside a block, for example a <code>plantuml</code> block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[plantuml, format="svg", id="myDiagram"]
+----
+Bob -&gt; Alice : hello
+Alice -&gt; Bob : hi
+----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above blocks will be converted to an HTML image tag with source pointing to the rendered image.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/63b0073e4ef3b2c3b4b3573127a46728408132c8.svg" alt="diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_includes"><a class="anchor" href="#_includes"></a>4.2. Includes</h3>
+<div class="paragraph">
+<p>It is also possible include diagrams from files. Non-AsciiDoc files that contain reusable content are called examples in Antora and saved in the <a href="https://docs.antora.org/antora/2.3/examples-directory/">examples-directory</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>📂 docs
+  📂 modules
+    📂 ROOT
+      📂 examples
+        📂 diagrams
+          📄 plantuml-single-diagram.plantuml
+          📄 plantuml-multiple-diagram.plantuml
+      📂 pages
+        📄 diagrams.adoc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example, like a PlantUML diagram, can be included by adding a <a href="https://docs.antora.org/antora/2.3/page/include-an-example/">include directive with the resource id of the example</a> within a block, like in this example within a <code>plantuml</code> block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-single-diagram.plantuml[]
+----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above blocks will be converted to an HTML image tag with source pointing to the rendered image.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/6fa96440bbc21603efe96668e74e60f8a7e84820.svg" alt="diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>A textual diagram description from a file which contains multipe diagrams can be included by the use of tags in order to specify regions.</p>
+</div>
+<div class="paragraph">
+<p>In a PlantUML file, a region can be defined by a beginning tag <code>'tag::name[]</code> and an end tag <code>'end::name[]</code>.
+For each diagram type the character <code>'</code> must be replaced with the comment indicator of the respective diagram type.</p>
+</div>
+<div class="paragraph">
+<p>The PlantUML file <code>plantuml-multiple-diagram.plantuml</code> has the defined tags <code>first_diagram</code> and <code>second_diagram</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plantuml hljs" data-lang="plantuml">@startuml
+'tag::first_diagram[]
+actor Bob #red
+' The only difference between actor
+'and participant is the drawing
+participant Alice
+participant "I have a really\nlong name" as L #99FF99
+/' You can also declare:
+participant L as "I have a really\nlong name"  #99FF99
+'/
+
+Alice-&gt;Bob: Authentication Request
+Bob-&gt;Alice: Authentication Response
+Bob-&gt;L: Log transaction
+'end::first_diagram[]
+@enduml
+
+@startuml
+'tag::second_diagram[]
+DataAccess - [First Component]
+[First Component] ..&gt; HTTP : us
+'end::second_diagram[]
+@enduml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Diagrams from a multi diagram file can be included by adding a include directive with a tag within a block, like in this example within a <code>plantuml</code> block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=first_diagram]
+----
+
+[plantuml, format="svg"]
+----
+include::example$diagrams/plantuml-multiple-diagrams.plantuml[tag=second_diagram]
+----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above blocks will be converted to HTML image tags with sources pointing to the rendered.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/ae680ae05b22e357cff47ee8324228c14c9c2e88.svg" alt="diagram">
+</div>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/8a586cd1b32b490615f296802aefd382c6b42469.svg" alt="diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
