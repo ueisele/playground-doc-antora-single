@@ -658,43 +658,6 @@ e01 ||..o{ e02
 e01 |o..o{ e03
 ----
 
-=== Ditaa
-
-link:http://ditaa.sourceforge.net/[Ditaa] interprets ascci art as a series of open and closed shapes, but it also uses special markup syntax to increase the possibilities of shapes and symbols that can be rendered.
-
-TIP: A link:https://plantuml.com/en/ditaa[Ditaa diagram] must be started with the `ditaa` keyword.
-
-[source,asciidoc]
-....
-[plantuml]
-----
-ditaa
-+--------+   +-------+    +-------+
-|        +---+ ditaa +--> |       |
-|  Text  |   +-------+    |diagram|
-|Document|   |!magic!|    |       |
-|     {d}|   |       |    |       |
-+---+----+   +-------+    +-------+
-    :                         ^
-    |       Lots of work      |
-    +-------------------------+
-----
-....
-
-[plantuml]
-----
-ditaa
-+--------+   +-------+    +-------+
-|        +---+ ditaa +--> |       |
-|  Text  |   +-------+    |diagram|
-|Document|   |!magic!|    |       |
-|     {d}|   |       |    |       |
-+---+----+   +-------+    +-------+
-    :                         ^
-    |       Lots of work      |
-    +-------------------------+
-----
-
 === DOT (Graphviz)
 
 link:https://www.graphviz.org/[Graphviz] is open source graph visualization software. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks.
@@ -846,138 +809,39 @@ digraph G {
 }
 ----
 
-== Extended Diagram Types
+== Unsupported Functionality and Diagram Types
 
-Diagram types that are not directly supported by PlantUML, but made available through macros and additional steriotypes.
+=== !Include Directive
 
-=== C4 PlantUML
+xref:diagrams/extensions/kroki.adoc[Kroki] does not support the `!include` and `!includeurl` directive. 
 
-The link:https://c4model.com/#coreDiagrams[C4 model] for software architecture is an "abstraction-first" approach to diagramming, based upon abstractions that reflect how software architects and developers think about and build software. C4 stands for context, containers, components, and code — a set of hierarchical diagrams that you can use to describe your software architecture at different zoom levels, each useful for different audiences.
+=== Ditaa
 
-link:https://github.com/RicardoNiepel/C4-PlantUML[C4-PlantUML] combines the benefits of PlantUML and the C4 model for providing a simple way of describing and communicate software architectures.
+link:http://ditaa.sourceforge.net/[Ditaa] interprets ascci art as a series of open and closed shapes, but it also uses special markup syntax to increase the possibilities of shapes and symbols that can be rendered.
 
-C4-PlantUML includes macros, stereotypes, and other goodies for creating C4 diagrams with PlantUML.
-
-At the top of your `plantuml` block, you need to include the link:https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Context.puml[C4_Context.puml], link:https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml[C4_Container.puml] or link:https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Component.puml[C4_Component.puml] file found in the root of this repo.
-
-----
-!include https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
-----
-
-For example a C4 Container diagram may be defined like this:
+xref:diagrams/extensions/kroki.adoc[Kroki] does not support `ditaa` rendered by `PlantUML`.
 
 [source,asciidoc]
 ....
 [plantuml]
 ----
-!include https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
-
-Person(admin, "Administrator")
-System_Boundary(c1, "Sample System") {
-  Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
-}
-System(twitter, "Twitter")
-
-Rel(admin, web_app, "Uses", "HTTPS")
-Rel(web_app, twitter, "Gets tweets from", "HTTPS")
+ditaa
++--------+   +-------+    +-------+
+|        +---+ ditaa +--> |       |
+|  Text  |   +-------+    |diagram|
+|Document|   |!magic!|    |       |
+|     {d}|   |       |    |       |
++---+----+   +-------+    +-------+
+    :                         ^
+    |       Lots of work      |
+    +-------------------------+
 ----
 ....
-
-[plantuml]
-----
-!include https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
-
-Person(admin, "Administrator")
-System_Boundary(c1, "Sample System") {
-  Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
-}
-System(twitter, "Twitter")
-
-Rel(admin, web_app, "Uses", "HTTPS")
-Rel(web_app, twitter, "Gets tweets from", "HTTPS")
-----
-
-The link:https://github.com/RicardoNiepel/C4-PlantUML#supported-diagram-types[supported diagram types] are documented on the link:https://github.com/RicardoNiepel/C4-PlantUML#supported-diagram-types[C4-PlantUML] GitHub page.
-
-=== Archimate PlantUML
-
-link:http://pubs.opengroup.org/architecture/archimate3-doc/[ArchiMate] is an open and independent enterprise architecture modeling language to support the description, analysis and visualization of architecture within and across business domains in an unambiguous way.
-
-PlantUML provides a textual language for describing link:https://plantuml.com/en/archimate-diagram[archimate diagrams] as described at <<Archimate Diagram>>.
-
-link:https://github.com/ebbypeter/Archimate-PlantUML[Archimate-PlantUML] combines the benefits of PlantUML and ArchiMate for providing a simple way of creating and managing ArchiMate diagrams. The Archimate-PlantUML is a set of macros and other includes written on top of link:http://plantuml.com/archimate-diagram[PlantUML Archimate specification], with an aim to simplify the syntax for creating elements and defining relationships.
-
-At the top of your `plantuml` block, you need to include the link:https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml[Archimate.puml] file.
-
-----
-!include https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
-----
-
-For example a Archimate PlantUML diagram may be defined like this:
-
-[source,asciidoc]
-....
-[plantuml]
-----
-!include https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/v1.0.0/Archimate.puml
-
-title Archimate Sample - Requirement & Application Services
-
-Motivation_Requirement(ReqPayrollStandard, "Do Payroll with a standard system")
-Motivation_Requirement(ReqBudgetPlanning, "Do budget planning within the ERP system")
-
-Application_Service(ASPayroll,"Payroll Service")
-Application_Service(ASBudgetPlanning,"Budget Planning Service")
-Application_Component(ACSAPFinanceAccRec, "SAP Finance - Accounts Recievables")
-Application_Component(ACSAPHR, "SAP Human Resources")
-Application_Component(ACSAPFin, "SAP Finance")
-Application_Component(ACSAP,"SAP") 
-
-Rel_Realization_Up(ASPayroll, ReqPayrollStandard)
-Rel_Realization_Up(ASBudgetPlanning, ReqBudgetPlanning)
-Rel_Realization_Up(ACSAPFinanceAccRec, ASBudgetPlanning)
-Rel_Realization_Up(ACSAPHR, ASPayroll)
-
-Rel_Composition_Up(ACSAPFin, ACSAPFinanceAccRec)
-Rel_Composition_Up(ACSAP, ACSAPHR)
-Rel_Composition_Up(ACSAP, ACSAPFin)
-----
-....
-
-[plantuml]
-----
-!include https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/v1.0.0/Archimate.puml
-
-title Archimate Sample - Requirement & Application Services
-
-Motivation_Requirement(ReqPayrollStandard, "Do Payroll with a standard system")
-Motivation_Requirement(ReqBudgetPlanning, "Do budget planning within the ERP system")
-
-Application_Service(ASPayroll,"Payroll Service")
-Application_Service(ASBudgetPlanning,"Budget Planning Service")
-Application_Component(ACSAPFinanceAccRec, "SAP Finance - Accounts Recievables")
-Application_Component(ACSAPHR, "SAP Human Resources")
-Application_Component(ACSAPFin, "SAP Finance")
-Application_Component(ACSAP,"SAP") 
-
-Rel_Realization_Up(ASPayroll, ReqPayrollStandard)
-Rel_Realization_Up(ASBudgetPlanning, ReqBudgetPlanning)
-Rel_Realization_Up(ACSAPFinanceAccRec, ASBudgetPlanning)
-Rel_Realization_Up(ACSAPHR, ASPayroll)
-
-Rel_Composition_Up(ACSAPFin, ACSAPFinanceAccRec)
-Rel_Composition_Up(ACSAP, ACSAPHR)
-Rel_Composition_Up(ACSAP, ACSAPFin)
-----
-
-The link:https://github.com/ebbypeter/Archimate-PlantUML#usage[usage] is explained on the link:https://github.com/ebbypeter/Archimate-PlantUML#usage[Archimate-PlantUML] GitHub page.
-
-== Unsupported Diagram Types
 
 === AsciiMath and JLaTeXMath
 
 The link:https://plantuml.com/en/ascii-math[PlantUML documentation] states that math formulars can be expressed with link:http://asciimath.org/[AsciiMath] or link:https://github.com/opencollab/jlatexmath[JLaTeXMath] syntax.
-However, GitLab does not support this PlantUML feature, and the following `plantuml` blocks therefore are rendered as plain text. 
+However, xref:diagrams/extensions/kroki.adoc[Kroki] does not support this PlantUML feature, and the following `plantuml` blocks therefore are rendered as plain text. 
 
 [source,asciidoc]
 ....

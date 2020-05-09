@@ -13,11 +13,11 @@ Antora does not support diagrams from textual descriptions by default. In order 
 
 == Extensions
 
-In this example the xref:diagrams/extensions/plantuml.adoc[PlantUML] extension is used in favour of xref:diagrams/extensions/kroki.adoc[Kroki], because PlantUML is also upported by GitLab.
+In this example the xref:diagrams/extensions/kroki.adoc[Kroki] extension is used in favour of xref:diagrams/extensions/plantuml.adoc[PlantUML], because link:https://github.com/eshepelyuk/asciidoctor-plantuml.js[asciidoctor-plantuml] extension is no longer maintained.
 
 == Diagram Types
 
-Diagram types, which are rendered with link:https://plantuml.com/en/[PlantUML]:
+Diagram types, which are rendered with link:https://kroki.io/#support[Kroki]:
 
 * xref:diagrams/types/plantuml.adoc[PlantUML]
 

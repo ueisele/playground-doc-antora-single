@@ -1,7 +1,7 @@
 * xref:index.adoc[Overview]
 * xref:diagrams.adoc[Diagrams]
 ** Extension
-*** xref:diagrams/extensions/plantuml.adoc[PlantUML]
 *** xref:diagrams/extensions/kroki.adoc[Kroki]
+*** xref:diagrams/extensions/plantuml.adoc[PlantUML]
 ** Types
 *** xref:diagrams/types/plantuml.adoc[PlantUML]
